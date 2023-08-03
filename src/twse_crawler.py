@@ -75,7 +75,7 @@ def transfer_colname_zh2en(df: pd.DataFrame, colname: list[str]) -> pd.DataFrame
     df = df.drop([''], axis=1)
     return df
 
-def get_twse_header():
+def get_twse_headers():
     return {
         "Accept": "application/json, text/javascript, */*; q=0.01",
         "Accept-Encoding": "gzip, deflate",
@@ -95,7 +95,8 @@ def crawler_twse(date: str) -> pd.DataFrame:
     url = f'https://www.twse.com.tw/rwd/zh/afterTrading/MI_INDEX?date={_date}&type=ALL&response=json'
     time.sleep(5)
     res = requests.get(
-        url, headers=get_twse_header()
+        url=url, 
+        headers=get_twse_headers()
     )
     
     try:
