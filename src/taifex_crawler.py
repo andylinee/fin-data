@@ -75,7 +75,7 @@ def transfer_colname_zh2en(df: pd.DataFrame) -> pd.DataFrame:
     ]
     return df
 
-def get_taifex_headers():
+def get_futures_headers():
     return {
         "Accept": "application/json, text/javascript, */*; q=0.01",
         "Accept-Encoding": "gzip, deflate",
@@ -96,7 +96,7 @@ def crawler_futures(date: str) -> pd.DataFrame:
     time.sleep(5)
     res = requests.get(
         url=url, 
-        headers=get_taifex_headers()
+        headers=get_futures_headers()
     )
     
     if res.ok:
