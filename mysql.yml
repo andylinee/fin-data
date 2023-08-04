@@ -1,0 +1,41 @@
+version: '3.3'
+services:
+
+  mysql:
+      image: mysql:8.0
+      command: mysqld --default-authentication-plugin=mysql_native_password
+      ports: 
+        # docker publish port 3306 to 3306 
+          - 3306:3306
+        # - target: 3306
+        #   published: 3306
+        #   mode: host
+      environment: 
+          MYSQL_DATABASE: mydb
+          MYSQL_USER: user
+          MYSQL_PASSWORD: test
+          MYSQL_ROOT_PASSWORD: test
+      volumes:
+          - mysql:/var/lib/mysql
+          # share volumes of docker container to outside volume, 
+          # let data persist
+      networks:
+          - dev
+
+  phpmyadmin:
+      image: phpmyadmin/phpmyadmin:5.1.0
+      links: 
+          - mysql:db
+      ports:
+          - 8000:80
+      depends_on:
+        - mysql
+      networks:
+          - dev
+     
+networks:
+  dev:
+
+volumes:
+  mysql:
+    external: true
