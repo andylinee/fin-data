@@ -1,4 +1,4 @@
-CREATE TABLE `FinancialData`.`TaiwanStockPrice` (
+CREATE TABLE `financial_data`.`TaiwanStockPrice` (
     `StockID` VARCHAR(10) NOT NULL,
     `TradeVolume` BIGINT NOT NULL,
     `Transaction` INT NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE `FinancialData`.`TaiwanStockPrice` (
     PRIMARY KEY(`StockID`, `Date`)
 )
 
-CREATE TABLE `FinancialData`.`TaiwanFuturesDaily` (
+CREATE TABLE `financial_data`.`TaiwanFuturesDaily` (
     `Date` DATE NOT NULL,
     `FuturesID` VARCHAR(10) NOT NULL,
     `ContractDate` VARCHAR(30) NOT NULL,
