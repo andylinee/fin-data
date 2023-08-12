@@ -8,12 +8,14 @@ packages = [{include = "fin_data"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-flask = "^2.3.2"
 pandas = "^2.0.3"
 requests = "^2.31.0"
 pydantic = "^2.1.1"
 loguru = "^0.7.0"
 sqlalchemy = "^2.0.19"
+fastapi = "^0.101.0"
+uvicorn = "^0.23.2"
+gunicorn = "^21.2.0"
 
 
 [build-system]
