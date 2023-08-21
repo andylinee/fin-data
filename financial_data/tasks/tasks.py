@@ -1,4 +1,4 @@
-from worker import app
+from financial_data.tasks.worker import app
 
 @app.task()
 def crawler(x):

@@ -3,7 +3,7 @@ import sys
 import time
 import pandas as pd
 import requests
-from financial_data.router import Router
+from financial_data.backend.db.router import Router
 from loguru import logger
 from pydantic import BaseModel
 

@@ -1,4 +1,4 @@
-from tasks import crawler
+from financial_data.tasks.tasks import crawler
 
 # Two ways to send tasks
 # 1.

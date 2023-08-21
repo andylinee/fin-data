@@ -1,6 +1,6 @@
 import time
 import typing
-from financial_data.client import get_mysql_financial_data_conn
+from financial_data.backend.db.client import get_mysql_financial_data_conn
 
 from loguru import logger
 from sqlalchemy import engine
@@ -43,3 +43,6 @@ class Router:
     @property
     def mysql_financial_data_conn(self):
         return self.check_mysql_financial_data_conn_alive()
+    
+    def close_connection(self):
+        self._mysql_financial_data_conn.close()
